@@ -11,15 +11,16 @@ import UIKit
 
 class BrandsListCell: UITableViewCell {
     
-    var brands: BrandsList? {
-        didSet {
-            guard let brands = brands else { return }
-            if let name = brands.name {
-                titleLabel.text = name
+        var brands: [BrandsList]? {
+            didSet {
+                guard let brands = brands else { return }
+                for brand in brands {
+                if let name = brand.name {
+                    titleLabel.text = name
+                }
+                }
             }
-
         }
-    }
 
     
     

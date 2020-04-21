@@ -62,13 +62,13 @@ extension BrandsListVC {
 extension BrandsListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.brandsText.count
+        return viewModel.brandsText.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueCell(BrandsListCell.self, indexPath: indexPath)
-        cell.brands = viewModel.brandsText[indexPath.row]
+        cell.brands = viewModel.brandsText[indexPath.row].results
         return cell
     }
     

@@ -12,8 +12,9 @@ import RxCocoa
 
 class BrandsListViewModel {
     
-    var brandsText: [BrandsList] = []
-    var brandsList = BehaviorRelay<[BrandContainer]>(value: [])
+    var brandsText: [BrandContainer] = []
+    var brandsContainer = BehaviorRelay<BrandContainer?>(value: nil)
+    
     
     private let disposeBag = DisposeBag()
     
@@ -25,7 +26,7 @@ class BrandsListViewModel {
 
                 guard let wSelf = self else { return }
 
-                wSelf.brandsList.accept(response)
+                wSelf.brandsContainer.accept(response)
 
                 success()
                 }, onError: { error in
@@ -33,7 +34,7 @@ class BrandsListViewModel {
             }).disposed(by: self.disposeBag)
     }
     
-    func getBrandsListApi() -> Observable<[BrandContainer]>  {
+    func getBrandsListApi() -> Observable<BrandContainer>  {
         return ApiClient.shared.loadAsObservable(ApiRouter.getBrandsList)
     }
     
