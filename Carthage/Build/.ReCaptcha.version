@@ -1,0 +1,24 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.5.0",
+  "iOS" : [
+    {
+      "name" : "ReCaptcha_RxSwift",
+      "hash" : "702852a32001569a96e63c1d2c4c41b8f8acb151bec535ddb83a89e8865c331a",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "ReCaptcha",
+      "hash" : "8b540383ff027ba06f310622abdde976c6bae7a652c7e0e6bedcfcd0a5c17c33",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "5.0.1",
+  "iOS" : [
+    {
+      "name" : "ToastSwiftFramework",
+      "hash" : "5d35734f0ff9a65a24fede8cab154d827434293c81e91e9610ed8f72dd2cd476",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

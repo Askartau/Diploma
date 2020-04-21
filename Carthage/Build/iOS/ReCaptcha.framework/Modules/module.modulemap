@@ -1,0 +1,4 @@
+framework module ReCaptcha {
+  header "ReCaptcha-Swift.h"
+  requires objc
+}

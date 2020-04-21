@@ -1,0 +1,37 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+    {
+      "name" : "Differentiator",
+      "hash" : "3c6e5ac3d2b5ce4ab3461d7e39e8c7a46b0e1cebcab89897935c566457e4bfdb",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "Differentiator",
+      "hash" : "4352cb87913098521b7a2b242ff2e8c974c837b3c5f44ef0b6f0dab157a89624",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxDataSources",
+      "hash" : "e5d61c1ee41173e6f6c2365bfa41f75c0405196ad1640c2546210210c6c305b6",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ],
+  "commitish" : "4.0.1",
+  "iOS" : [
+    {
+      "name" : "Differentiator",
+      "hash" : "679b8d44b5847406f5ad5356861d2a974bde8ecfbecb7be2738e42a7ea0638dc",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxDataSources",
+      "hash" : "884b3f88549fd3707725c6f27ef323fe7e8d5623f99107132bd11a92320fe594",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

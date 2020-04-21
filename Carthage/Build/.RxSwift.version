@@ -1,0 +1,106 @@
+{
+  "Mac" : [
+    {
+      "name" : "RxBlocking",
+      "hash" : "45c7716a5a0467324d5a7bbe4497b2ffa120a4e15d91443d697db416ab88dca0",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxTest",
+      "hash" : "03b76bef8c44695dff2d0370da90533b96ef8d22a439824f846db4a42296d98d",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxSwift",
+      "hash" : "6ab41d5c07860a251fb780f3d7dbe00d2d3644fdf5cfe89ffc11aa92234122ee",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxRelay",
+      "hash" : "e8201a527707c9c5243c6483963593ce8d939f49763cc0cbffc399faa0804a00",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxCocoa",
+      "hash" : "84dd76da68340605dd1831cd99b99eb527ad040604ba7f2b2e6316a9551de82d",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "RxBlocking",
+      "hash" : "f6e06daf93fd8acf99fe832e316313510b512fa4fcbf2fe850ce82555006a06e",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxRelay",
+      "hash" : "185daa167649c8197d83dfdd2b1ddd3b8c915d40cc905a3314a4d4c1bc55541f",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxCocoa",
+      "hash" : "966f12ec33383feb85047cc070a576df49dd974ce8b35788657a64b26307bc3d",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxSwift",
+      "hash" : "b668535472b909dfa1b8cf41192cdab914a47a2594b8b6addb31407e33eac4d3",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "RxTest",
+      "hash" : "83f6ff8f2a0e896426476391f618c6d53831c625d47aa05a2853c339ae47dd91",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxBlocking",
+      "hash" : "956153064cc79d9abf29290441076cd5a1b866f2e9ee614f9cf8fec3c6d166ab",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxRelay",
+      "hash" : "53c9720edc6de6d1028247fef296a4d9943d7b57a7786e691807a04f8c984829",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxCocoa",
+      "hash" : "c527fa0eda1d25c0892219c7817f55f63e12792c5955b6fd615e64e8962767e8",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxSwift",
+      "hash" : "9d26dc9aed05c1ca1f35cc5b2359372f82c2458d58508802d30469d41b1dac29",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ],
+  "commitish" : "5.0.1",
+  "iOS" : [
+    {
+      "name" : "RxBlocking",
+      "hash" : "5378af7c0d205ea121e76384888d4902d43a88f1343e1d26a1e8b9bdff53dcd5",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxTest",
+      "hash" : "de35c32e5b90244578d39958352619831ec7214e39d6c14217cf1bb9b7947132",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxRelay",
+      "hash" : "02becd616483824bea6116130468369419c317792e38690f827506b9fec20714",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxCocoa",
+      "hash" : "c0202b5e325a9650863d3e422fcb051c0490c6ea5a08b6576db5a6088ba9e94e",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    },
+    {
+      "name" : "RxSwift",
+      "hash" : "1f44f64f631634093c2901c6ec722e99ecdfea0fcdf0f78c253da185495d1638",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

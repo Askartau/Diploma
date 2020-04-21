@@ -1,0 +1,23 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "v6.0.4",
+  "iOS" : [
+    {
+      "name" : "IQKeyboardManager",
+      "hash" : "1604005aebb73f5226e1332132a4ad44ec1669a2faa8f0b44b8ac192b14c5bcd"
+    },
+    {
+      "name" : "IQKeyboardManagerSwift",
+      "hash" : "4f824cd3b8183860a3c3b52f9fb4c3a76eb8c2c26ba283cfa75a02ecc8464c6b",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

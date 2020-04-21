@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.5",
+  "iOS" : [
+    {
+      "name" : "HCSStarRatingView",
+      "hash" : "707f3f46296fc85dad3365af863fbd85164f72b26680540d8b1ffa6b7464c027"
+    }
+  ]
+}

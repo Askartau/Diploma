@@ -1,0 +1,12 @@
+github "Alamofire/Alamofire" 
+github "ReactiveX/RxSwift"
+github "SnapKit/SnapKit" 
+github "hsousa/HCSStarRatingView"
+github "SVProgressHUD/SVProgressHUD"
+github "hackiftekhar/IQKeyboardManager" == 6.0.4
+github "RxSwiftCommunity/RxDataSources"
+git "https://github.com/RedMadRobot/input-mask-ios.git"
+github "fjcaetano/ReCaptcha"
+github "scalessec/Toast-Swift" ~> 5.0.0
+github "socketio/socket.io-client-swift" ~> 15.2.0
+github "danielgindi/Charts"

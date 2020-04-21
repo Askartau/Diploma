@@ -1,0 +1,11 @@
+framework module ReCaptcha_RxSwift {
+  umbrella header "ReCaptcha_RxSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module ReCaptcha_RxSwift.Swift {
+    header "ReCaptcha_RxSwift-Swift.h"
+    requires objc
+}

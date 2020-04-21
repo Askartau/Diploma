@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "5.0.0",
+  "iOS" : [
+    {
+      "name" : "InputMask",
+      "hash" : "13c6fceb0024d61ed789942aa0ff055d66cbc911eccdf4c03c4292fa6a7fa2c4",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

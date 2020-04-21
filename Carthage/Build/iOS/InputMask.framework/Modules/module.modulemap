@@ -1,0 +1,11 @@
+framework module InputMask {
+  umbrella header "InputMask.h"
+
+  export *
+  module * { export * }
+}
+
+module InputMask.Swift {
+    header "InputMask-Swift.h"
+    requires objc
+}

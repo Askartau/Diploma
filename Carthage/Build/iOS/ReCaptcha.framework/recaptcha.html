@@ -1,0 +1,87 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <script type="text/javascript">
+    const post = (value) => window.webkit.messageHandlers.recaptcha.postMessage(value);
+    console.log = (message) => post({ log: message });
+
+    let observers = []
+    const observeDOM = (element, completion) => {
+      const obs = new MutationObserver(completion);        
+      obs.observe(element, {
+            attributes: true, 
+            childList: true,
+            subtree: true,
+            attributeFilter: ['style'],
+          });
+
+      observers.push(obs);
+  };
+
+  const clearObservers = () => {
+    observers.forEach(o => o.disconnect());
+    observers = [];
+  };
+
+  const execute = () => {
+    console.log('executing');
+
+    // Removes ReCaptcha dismissal when clicking outside div area
+    try {
+        document.getElementsByTagName('div')[4].outerHTML = ''
+    }
+    catch(e) {
+    }
+
+    try {
+      // Listens to changes on the div element that presents the ReCaptcha challenge
+      observeDOM(document.getElementsByTagName('div')[3], () => {
+        post({ action: 'showReCaptcha' });
+      });
+    } catch(e) {
+      post({ error: 27 })
+    }
+
+    grecaptcha.execute();
+  };
+
+  const reset = () => {
+    console.log('resetting');
+    grecaptcha.reset();
+    grecaptcha.ready(() => post({ action: 'didLoad' }));
+  };    
+
+  var onloadCallback = () => {
+    grecaptcha.render('submit', {
+      sitekey: '${apiKey}',
+      callback: (token) => {
+        console.log(token);
+        post({ token });
+        clearObservers();
+      },
+      size: 'invisible'
+    });
+
+    grecaptcha.ready(() => {
+      observeDOM(document.getElementById('body'), mut => {
+        const success = !!mut.find(
+          ({ addedNodes }) =>
+            Array.from(addedNodes.values())
+              .find(({ nodeName, name }) =>
+                nodeName === 'IFRAME' && !!name
+              )
+        );
+
+        if (success) {
+          post({ action: 'didLoad' });
+        }
+      });
+    });
+  };
+  </script>
+</head>
+<body id='body'>
+  <span id="submit" style="visibility: hidden;"></span>
+  <script src="${endpoint}" async defer></script>
+</body>
+</html>
