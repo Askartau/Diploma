@@ -16,10 +16,18 @@ enum ApiRouter : URLRequestConvertible {
     //MARK: BrandsList
     case getBrandsList
     
+    //MARK: Cars
+    case getCars
+    
+    //MARK: SelectedBrandModels
+    case getBrandModels(id: Int)
+    
     //MARK: ------HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .getBrandsList:
+        case .getBrandsList,
+             .getCars,
+             .getBrandModels:
             return .get
             
         }
@@ -31,6 +39,10 @@ enum ApiRouter : URLRequestConvertible {
             //MARK: BrandsList
         case .getBrandsList:
             return "marks/"
+        case .getCars:
+            return "models/"
+        case .getBrandModels(let id):
+            return "marks/\(id)/cars/"
         }
         
     }
@@ -56,13 +68,13 @@ enum ApiRouter : URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         
         
-        #if DEVELOPMENT
-        urlRequest.setValue("false", forHTTPHeaderField: Constants.HttpHeaderField.test.rawValue)
-        #elseif PREPROD
-        urlRequest.setValue("true", forHTTPHeaderField: Constants.HttpHeaderField.test.rawValue)
-        #else
-        urlRequest.setValue("false", forHTTPHeaderField: Constants.HttpHeaderField.test.rawValue)
-        #endif
+//        #if DEVELOPMENT
+//        urlRequest.setValue("false", forHTTPHeaderField: Constants.HttpHeaderField.test.rawValue)
+//        #elseif PREPROD
+//        urlRequest.setValue("true", forHTTPHeaderField: Constants.HttpHeaderField.test.rawValue)
+//        #else
+//        urlRequest.setValue("false", forHTTPHeaderField: Constants.HttpHeaderField.test.rawValue)
+//        #endif
         
         
         

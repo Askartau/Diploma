@@ -19,7 +19,7 @@ class BrandsListViewModel {
     private let disposeBag = DisposeBag()
     
     
-    func getBrandsList(_ success: @escaping() -> Void, _ failure: @escaping failure) {
+    func getBrandsList(_ success: @escaping(BrandContainer) -> Void, _ failure: @escaping failure) {
         getBrandsListApi()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] response in
@@ -28,7 +28,7 @@ class BrandsListViewModel {
 
                 wSelf.brandsContainer.accept(response)
 
-                success()
+                success(response)
                 }, onError: { error in
                     failure(error.handleError())
             }).disposed(by: self.disposeBag)

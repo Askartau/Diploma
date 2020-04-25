@@ -23,6 +23,11 @@ class BrandsListVC: UIViewController {
     fileprivate var headerView = BrandsListHeaderView()
     fileprivate var footerView = BrandsListFooterView()
     
+    var brandContainer: BrandContainer?{
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -42,6 +47,7 @@ class BrandsListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        self.navigationItem.title = "CarBase"
         configUI()
         getBrandslist()
     }
@@ -50,7 +56,8 @@ class BrandsListVC: UIViewController {
 //MARK: - Requests
 extension BrandsListVC {
     func getBrandslist() {
-        viewModel.getBrandsList({
+        viewModel.getBrandsList({ result in
+            self.brandContainer = result
             
         }) { (error) in
             self.alertError(text: error).subscribe().disposed(by: self.disposeBag)
@@ -62,13 +69,13 @@ extension BrandsListVC {
 extension BrandsListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.brandsText.count ?? 0
+        return brandContainer?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueCell(BrandsListCell.self, indexPath: indexPath)
-        cell.brands = viewModel.brandsText[indexPath.row].results
+        cell.brands = brandContainer?.results[indexPath.row]
         return cell
     }
     
@@ -82,8 +89,8 @@ extension BrandsListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let carsVC = SelectedBrandCarsList()
-        navigationController?.pushViewController(carsVC, animated: true)
+        let selectedBrandCarsList = SelectedBrandCarsListVC()
+        navigationController?.pushViewController(selectedBrandCarsList, animated: true)
     }
     
 }

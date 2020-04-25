@@ -9,3 +9,15 @@
 //MARK: - Onboarding
 "error" = "Ошибка";
 "close" = "Закрыть";
+"name" = "Имя";
+"surname" = "Фамилия";
+"phone_number" = "Телефон";
+"mail" = "Почта";
+"request_a_call" = "Заказать звонок";
+"call_yourself" = "Позвонить самому";
+"city" = "Город";
+"mark" = "Марка";
+"model" = "Модель";
+"gear" = "Привод";
+"car_body" = "Кузов";
+"gear_box" = "КПП";

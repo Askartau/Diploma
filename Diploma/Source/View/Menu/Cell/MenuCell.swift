@@ -14,7 +14,7 @@ class MenuCell: UITableViewCell {
     
     fileprivate lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = UIColor.blueMain
+        imageView.tintColor = UIColor.mainColor
         return imageView
     }()
     
@@ -37,7 +37,7 @@ class MenuCell: UITableViewCell {
     
      var titleLabel: UILabel = {
         let label = UILabel()
-        label.set(font: UIFont.regular(size: 16), textColor: UIColor.blueMain)
+        label.set(font: UIFont.regular(size: 16), textColor: UIColor.mainColor)
         return label
     }()
     

@@ -1,5 +1,13 @@
 //
-//  BrandsListCell.swift
+//  FilterCell.swift
+//  Diploma
+//
+//  Created by Askar Serikkhanov on 4/25/20.
+//  Copyright © 2020 Askar Serikkhanov. All rights reserved.
+//
+
+//
+//  FilterCell.swift
 //  Diploma
 //
 //  Created by Askar Serikkhanov on 2/10/20.
@@ -9,17 +17,7 @@
 import Foundation
 import UIKit
 
-class BrandsListCell: UITableViewCell {
-
-    var brands: BrandsList? {
-        didSet {
-            guard let brands = brands else { return }
-            if let name = brands.name {
-                titleLabel.text = name
-            }
-        }
-    }
-
+class FilterCell: UITableViewCell {
     
     
     fileprivate lazy var containerView: UIView = {
@@ -34,6 +32,15 @@ class BrandsListCell: UITableViewCell {
         return label
     }()
     
+    fileprivate lazy var imgView:  UIImageView = {
+        let img = UIImageView(frame: .zero)
+        img.clipsToBounds = true
+        img.image = UIImage(named: "arrow.jpg")
+        img.contentMode = .scaleAspectFit
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
@@ -45,13 +52,13 @@ class BrandsListCell: UITableViewCell {
     }
     
 }
-extension BrandsListCell {
+extension FilterCell {
     func configUI() {
         selectionStyle = .none
         
         addSubview(containerView)
         
-        [titleLabel].forEach {
+        [titleLabel, imgView].forEach {
             containerView.addSubview($0)
         }
         
@@ -70,7 +77,12 @@ extension BrandsListCell {
         titleLabel.snp.makeConstraints { (m) in
             m.top.equalToSuperview().offset(16)
             m.left.equalToSuperview().offset(16)
-            m.right.equalToSuperview().offset(-16)
+        }
+        imgView.snp.makeConstraints { (m) in
+            m.top.equalToSuperview().offset(16)
+            m.right.equalToSuperview().offset(-10)
+            m.width.equalTo(20)
+            m.height.equalTo(20)
         }
         
     }

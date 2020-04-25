@@ -24,7 +24,7 @@ class OurButton: UIButton {
                 setAttributedTitle(NSAttributedString(string: title.uppercased(), attributes:
                     [
                         NSAttributedString.Key.font : UIFont.regular(size: 14),
-                        NSAttributedString.Key.foregroundColor : UIColor.blueMain
+                        NSAttributedString.Key.foregroundColor : UIColor.mainColor
                     ]), for: .normal)
             } else {
                 setAttributedTitle(NSAttributedString(string: title.uppercased(), attributes:
@@ -36,7 +36,7 @@ class OurButton: UIButton {
         }
     }
     
-    public var bgColor : UIColor = UIColor.blueMain {
+    public var bgColor : UIColor = UIColor.mainColor {
         didSet {
             backgroundColor = bgColor
         }
@@ -60,7 +60,7 @@ class OurButton: UIButton {
 extension OurButton {
     func setDisabled(_ disabled:Bool = true) {
         isUserInteractionEnabled = !disabled
-        backgroundColor = disabled ? UIColor.blueMain.withAlphaComponent(0.3) : UIColor.blueMain
+        backgroundColor = disabled ? UIColor.mainColor.withAlphaComponent(0.3) : UIColor.mainColor
     }
 }
 
@@ -76,10 +76,10 @@ extension OurButton {
             backgroundColor = .clear
         } else if self.type == .bordered {
             backgroundColor = .clear
-            layer.borderColor = UIColor.blueMain.cgColor
+            layer.borderColor = UIColor.mainColor.cgColor
             layer.borderWidth = 1.0
         } else {
-            backgroundColor = .blueMain
+            backgroundColor = .mainColor
         }
     }
 }

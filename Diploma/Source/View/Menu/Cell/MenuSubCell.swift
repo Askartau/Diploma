@@ -14,7 +14,7 @@ class MenuSubCell: UITableViewCell {
     
     fileprivate var titleLabel: UILabel = {
         let label = UILabel()
-        label.set(font: UIFont.regular(size: 16), textColor: UIColor.blueMain)
+        label.set(font: UIFont.regular(size: 16), textColor: UIColor.mainColor)
         return label
     }()
     

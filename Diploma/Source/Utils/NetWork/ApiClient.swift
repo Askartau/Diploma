@@ -59,7 +59,8 @@ class ApiClient {
                             return
                         }
                         do {
-                            let object = try JSONDecoder().decode(T.self, from: data)
+                            let object = try JSONDecoder().decode(T.self, from: data) 
+//                            print(object?.results.count)
                             observer.onNext(object)
                         } catch {
                             observer.onError(error)
@@ -165,7 +166,7 @@ class ApiClient {
     func log(_ route:ApiRouter, _ response:DataResponse<Any>) {
         print("------------------START REQUEST---------------------------")
         print("-> URL REQUEST: ", route.urlRequest?.url?.absoluteString ?? "")
-//        print("-> API HEADERS: ", route.urlRequest?.allHTTPHeaderFields?.toData()?.prettyPrintedJSONString ?? "")
+        print("-> API HEADERS: ", route.urlRequest?.allHTTPHeaderFields?.toData()?.prettyPrintedJSONString ?? "")
         print("-> METHOD: ", route.urlRequest?.httpMethod ?? "")
         if let body = route.urlRequest?.httpBody {
             print("-> API BODY: ", body.prettyPrintedJSONString ?? "")
@@ -218,17 +219,36 @@ class ApiClient {
 
 extension ApiClient {
     
+//    var userLogin:BrandContainer? {
+//        
+//        set {
+//            let encoder = JSONEncoder()
+//            if let codePhone = newValue {
+//                if let encoded = try? encoder.encode(codePhone) {
+//                    let defaults = UserDefaults.standard
+//                    defaults.set(encoded, forKey: Constants.kUserLogin)
+//                }
+//            }
+//        }
+//        
+//        get {
+//            let defaults = UserDefaults.standard
+//            if let codePhone = defaults.object(forKey: Constants.kUserLogin) as? Data {
+//                let decoder = JSONDecoder()
+//                if let phone = try? decoder.decode(PhoneCode.self, from: codePhone) {
+//                    return phone
+//                }
+//            }
+//            return nil
+//        }
+//    }
     
     
     var client:String? {
         return KeychainService.load(service: Constants.service, key: Constants.client)
     }
     
-    
-    
-//    func setOnboardShown(_ isOnboardShown:Bool) {
-//        UserDefaults.standard.set(isOnboardShown, forKey: Constants.isOnboardShown)
-//    }
+
     
     func setClient(_ client:String) {
         if KeychainService.load(service: Constants.service, key: Constants.client) != nil {
@@ -239,27 +259,8 @@ extension ApiClient {
         }
     }
     
-//    var notificationToken:String? {
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: Constants.notificationToken)
-//        }
-//
-//        get {
-//            return UserDefaults.standard.value(forKey: Constants.notificationToken) as? String
-//        }
-//    }
-//
-//    var chosenLanguage:String {
-//        set {
-//            UserDefaults.standard.setValue(newValue, forKey: Constants.language)
-//        }
-//
-//        get {
-//            if let languageString = UserDefaults.standard.value(forKey: Constants.language) as? String {
-//                return languageString
-//            }else{
-//                return LanguageType.ru.rawValue
-//            }
-//        }
-//    }
+//    var notificationToken:String?
+
+//    var chosenLanguage
+
 }

@@ -14,7 +14,7 @@ class BrandContainer: Codable {
 
 class BrandsList: Codable {
     let name: String?
-    let id: Int
+    let id: Int?
 //    var image: URL
     
 }
