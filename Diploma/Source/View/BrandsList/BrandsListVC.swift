@@ -15,7 +15,6 @@ import RxCocoa
 
 class BrandsListVC: UIViewController {
     
-    
     private let viewModel = BrandsListViewModel()
     private let disposeBag = DisposeBag()
     
@@ -28,6 +27,17 @@ class BrandsListVC: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    lazy var searchController: UISearchController = {
+        let s = UISearchController(searchResultsController: nil)
+        
+        s.obscuresBackgroundDuringPresentation = false
+        s.searchBar.placeholder = "Поиск марок"
+        s.searchBar.sizeToFit()
+        s.searchBar.searchBarStyle = .prominent
+
+        return s
+    }()
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -48,6 +58,9 @@ class BrandsListVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         self.navigationItem.title = "CarBase"
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         configUI()
         getBrandslist()
     }
@@ -64,6 +77,26 @@ extension BrandsListVC {
         }
     }
 }
+
+
+//MARK: - Binding Views
+extension BrandsListVC {
+    func setObservers() {
+        
+//        tableView.rx.modelSelected(BrandsList.self)
+//        changePassword.rx.tap.subscribe(onNext: { [weak self] in
+//            guard let wSelf = self else { return }
+//            wSelf.openChangePasswordVC()
+//
+//        }).disposed(by: disposeBag)
+        
+        
+    }
+}
+
+//extension BrandsListVC: UISearchBarDelegate {
+//
+//}
 
 
 extension BrandsListVC: UITableViewDataSource, UITableViewDelegate {

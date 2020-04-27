@@ -22,12 +22,16 @@ enum ApiRouter : URLRequestConvertible {
     //MARK: SelectedBrandModels
     case getBrandModels(id: Int)
     
+    //Mark: OfferByBrand
+    case getOffers
+    
     //MARK: ------HttpMethod
     private var method: HTTPMethod {
         switch self {
         case .getBrandsList,
              .getCars,
-             .getBrandModels:
+             .getBrandModels,
+             .getOffers:
             return .get
             
         }
@@ -43,6 +47,8 @@ enum ApiRouter : URLRequestConvertible {
             return "models/"
         case .getBrandModels(let id):
             return "marks/\(id)/cars/"
+        case .getOffers:
+            return "offers/"
         }
         
     }

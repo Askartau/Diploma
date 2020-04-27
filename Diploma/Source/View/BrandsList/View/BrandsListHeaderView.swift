@@ -19,17 +19,17 @@ class BrandsListHeaderView: UIView {
         return containerView
     }()
     
-    fileprivate lazy var searchButton: OurButton = {
-        let button = OurButton(type: .bordered)
-        button.title = "Найти"
-        return button
-    }()
-    
-    fileprivate lazy var line1 : UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = UIColor.autoBgGray
-        return view
-    }()
+//    fileprivate lazy var searchButton: OurButton = {
+//        let button = OurButton(type: .bordered)
+//        button.title = "Найти"
+//        return button
+//    }()
+//    
+//    fileprivate lazy var line1 : UIView = {
+//        let view = UIView(frame: .zero)
+//        view.backgroundColor = UIColor.autoBgGray
+//        return view
+//    }()
     
     
     fileprivate lazy var carLabel: UILabel = {
@@ -61,7 +61,7 @@ extension BrandsListHeaderView{
         
         addSubview(containerView)
         
-        [line1 , carLabel, searchButton].forEach {
+        [carLabel].forEach {
             containerView.addSubview($0)
         }
         
@@ -75,24 +75,9 @@ extension BrandsListHeaderView{
             m.left.equalToSuperview()
             m.bottom.equalToSuperview()
         }
-        
-        searchButton.snp.makeConstraints { (m) in
-            m.top.equalToSuperview().offset(20)
-            m.right.equalToSuperview().offset(-20)
-            m.left.equalToSuperview().offset(20)
-            m.height.equalTo(40)
-            
-        }
-
-        line1.snp.makeConstraints { (m) in
-            m.top.equalTo(searchButton).offset(50)
-            m.width.equalToSuperview()
-            m.height.equalTo(1.0)
-            m.centerX.equalToSuperview()
-        }
 
         carLabel.snp.makeConstraints { (m) in
-            m.top.equalTo(line1).offset(15)
+            m.top.equalToSuperview().offset(20)
             m.centerX.equalToSuperview()
             m.bottom.equalToSuperview()
         }

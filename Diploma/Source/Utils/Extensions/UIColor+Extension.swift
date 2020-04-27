@@ -12,7 +12,6 @@ import UIKit
 extension UIColor {
     
     static let mainColor = #colorLiteral(red: 0.005771268625, green: 0.7737252116, blue: 0.671456337, alpha: 1)
-    static let selectedPurpleMain = UIColor.fromRgb(rgb: 0xB48CFF)
     static let bgLightGray = UIColor.fromRgb(rgb: 0xC4C4C4)
     static let bgGray = UIColor.fromRgb(rgb: 0xDFE0E9)
     static let greenMain = UIColor.fromRgb(rgb: 0x00BFA8)

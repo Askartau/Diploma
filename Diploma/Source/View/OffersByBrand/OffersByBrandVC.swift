@@ -15,7 +15,7 @@ import ReCaptcha
 
 class OffersByBrandVC: UIViewController {
     
-    private let viewModel = SelectedBrandViewModel()
+    private let viewModel = OffersByBrandViewModel()
     private let disposeBag = DisposeBag()
     
     lazy var indicator = UIActivityIndicatorView(style: .gray)
@@ -50,14 +50,14 @@ class OffersByBrandVC: UIViewController {
         
         tableView.registerCell(OffersByBrandCell.self)
         configUI()
-        getCars()
+        getOffers()
     }
 }
 
 //MARK: - Requests
 extension OffersByBrandVC{
-    func getCars() {
-        viewModel.getCars({ result in
+    func getOffers() {
+        viewModel.getOffers({ result in
             
             
         }) { (error) in
@@ -80,11 +80,11 @@ extension OffersByBrandVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        tableView.deselectRow(at: indexPath, animated: true)
-    //        let carsVC = OffersByBrandVC()
-    //        navigationController?.pushViewController(carsVC, animated: true)
-    //    }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let vc = SelectedOfferVC()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     
 }
 
